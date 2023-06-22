@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+body {
+  background-color: #023047;
+}
+
+.wrapper {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.input-wrapper {
+  width: 100%;
+  display: flex;
+}
+.input-wrapper input {
+  font-size: 30px;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+}
+
+.col-4 {
+  display: flex;
+  justify-content: center;
+  width: 33%;
+}
+
+.col-3 {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}
+
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.value-btn {
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.action-btn {
+  width: 120px;
+  height: 100px;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.get-money {
+  background-color: rgb(244, 60, 35);
+  color: white;
+  border: 1px solid black;
+}
+
+.add-money {
+  background-color: rgb(42, 244, 35);
+  color: white;
+  border: 1px solid rgb(181, 181, 181);
+}
+
+.simpBtn {
+  margin-left: 10px;
+  font-size: 24px;
+  background-color: cadetblue;
+  width: 40px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions-button {
+  flex-direction: column;
+}
+
+.action-btn {
+  border-radius: 20px;
+}
+
+.col-5 {
+  width: 41%;
+}

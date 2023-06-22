@@ -3,6 +3,7 @@ const resetBtn = document.querySelector(".simpBtn");
 const addBtn = document.querySelector(".addBtn");
 const minusBtn = document.querySelector(".minus")
 const input = document.querySelector("input");
+const valueButtons = document.querySelectorAll('.value-btn');
 
 let total = 0;
 
@@ -44,7 +45,7 @@ function addition() {
 
 function minus() {
     const currentValue = Number(input.value);
-    total = currentValue - total;
+    total = total - currentValue;
     input.value = total;
     console.log(input.value);
 }
@@ -55,29 +56,12 @@ resetBtn?.addEventListener("click", function () {
     total = 0;
 });
 
-// function tryParse() {
-
-//     parsnum += Number(input.value);
-//     console.log(parsnum);
-//     return parsnum;
-
-// }
 
 
+valueButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const value = button.value;
+        input.value += value;
+    });
+});
 
-
-// function minus(total) {
-//     var num = tryParse();
-//     var result = total - num;
-//     return result;
-// }
-// function devision(total) {
-//     var num = tryParse();
-//     var result = total / num;
-//     return result;
-// }
-// function resetTheCalculator(total) {
-//     total = Number(0);
-//     alert("Calculator has succesfully been reseted");
-//     return total;
-// }

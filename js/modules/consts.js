@@ -1,0 +1,1 @@
+export const allowedCharacters = /^[0-9\-+=*]$/;

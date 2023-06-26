@@ -4,64 +4,86 @@ const addBtn = document.querySelector(".addBtn");
 const minusBtn = document.querySelector(".minus")
 const input = document.querySelector("input");
 const valueButtons = document.querySelectorAll('.value-btn');
+const actionButtons = document.querySelectorAll('.action-btn');
 
 let total = 0;
 
-function multiply() {
-    if (input.value === 0) {
-        console.log("salam");
 
-        total = currentValue * total;
-        input.value = total;
-        total = 1;
-    } else {
-        const currentValue = Number(input.value);
-        console.log(currentValue);
-        console.log(total);
-        total = currentValue * total;
-        input.value = total;
-    }
-}
-
-multiplyBtn?.addEventListener("click", function () {
-    multiply();
-});
-
-addBtn?.addEventListener("click", function () {
-    addition();
-});
-
-minusBtn?.addEventListener("click", function () {
-    minus();
-});
-
-function addition() {
-    const currentValue = Number(input.value);
-    total += currentValue;
-    input.value = total;
-    console.log(input.value);
-}
-
-
-function minus() {
-    const currentValue = Number(input.value);
-    total = total - currentValue;
-    input.value = total;
-    console.log(input.value);
-}
-
-
-resetBtn?.addEventListener("click", function () {
-    input.value = "0";
-    total = 0;
-});
-
-
-
-valueButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const value = button.value;
-        input.value += value;
+function addValues() {
+    valueButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.value === "c") {
+                input.value = ""
+            }
+            else if (button.value === "-1") {
+                input.value = input.value.slice(0, -1)
+            }
+            else {
+                input.value += button.value;
+            }
+        });
     });
-});
+}
 
+function addOperations() {
+    actionButtons.forEach(acbutton => {
+        acbutton.addEventListener('click', () => {
+            const lastSymbol = input.value.slice(-1);
+            console.log(lastSymbol);
+            if (acbutton.value === "=") {
+                if (input.value.length != 0) {
+                    input.value = eval(input.value);
+                }
+            }
+            else if (isNaN(lastSymbol)) {
+                actionButtons.forEach(acbutton => {
+                    acbutton.addEventListener("click", function (event) {
+                        event.preventDefault();
+                    });
+                })
+            }
+            else {
+                input.value += acbutton.value;
+            }
+        })
+    })
+}
+
+function keyBoardEvents() {
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        const allowedCharacters = /^[0-9\-+=*]$/;
+        const lastSymbol = input.value.slice(-1);
+
+        if (allowedCharacters.test(key) || key === 'Backspace' || key === 'Delete') {
+            if (key === 'Backspace') {
+                event.preventDefault();
+                const currentValue = input.value;
+                input.value = currentValue.substring(0, currentValue.length - 1);
+            } else if (key === 'Delete') {
+                event.preventDefault();
+                input.value = '';
+            }
+            else if (key === '=') {
+                if (input.value.length != 0) {
+                    input.value = eval(input.value);
+                }
+            }
+            else if (lastSymbol === '+' || lastSymbol === '-' || lastSymbol === '*') {
+                if (key === '+' || key === '-' || key === '*') {
+                    key.preventDefault();
+                } else {
+                    input.value += key;
+                }
+            }
+            else {
+                input.value += key;
+            }
+        }
+    }, false);
+
+}
+
+addValues();
+addOperations();
+keyBoardEvents();

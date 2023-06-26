@@ -38,7 +38,8 @@ body {
   font-size: 30px;
   text-align: center;
   height: 50px;
-  width: 100%;
+  width: 80%;
+  border-radius: 10px;
 }
 
 .col-4 {
@@ -57,6 +58,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 80%;
+}
+
+.action-btn {
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  margin-top: 20px;
+  border-radius: 50%;
+  background-color: #F1A629;
+  color: whitesmoke;
+  border: none;
 }
 
 .value-btn {
@@ -64,13 +77,10 @@ body {
   height: 100px;
   font-size: 24px;
   margin-top: 20px;
-}
-
-.action-btn {
-  width: 120px;
-  height: 100px;
-  font-size: 24px;
-  margin-top: 20px;
+  border-radius: 50%;
+  background-color: #F1A629;
+  color: whitesmoke;
+  border: none;
 }
 
 .get-money {
@@ -99,10 +109,6 @@ body {
 
 .actions-button {
   flex-direction: column;
-}
-
-.action-btn {
-  border-radius: 20px;
 }
 
 .col-5 {

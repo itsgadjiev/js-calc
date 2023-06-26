@@ -14,9 +14,8 @@
 
 body {
     background-color: #023047;
+
 }
-
-
 
 .wrapper {
     padding-top: 100px;
@@ -24,13 +23,12 @@ body {
     flex-direction: column;
     width: 30%;
     margin: 0 auto;
+
 }
 
 .buttons-wrapper {
-
     display: flex;
     flex-wrap: wrap;
-
     flex-direction: row;
 }
 
@@ -38,11 +36,13 @@ body {
     width: 100%;
     display: flex;
 
+
     input {
         font-size: 30px;
         text-align: center;
         height: 50px;
-        width: 100%;
+        width: 80%;
+        border-radius: 10px;
     }
 }
 
@@ -62,6 +62,18 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 80%;
+}
+
+.action-btn {
+    width: 100px;
+    height: 100px;
+    font-size: 24px;
+    margin-top: 20px;
+    border-radius: 50%;
+    background-color: #F1A629;
+    color: whitesmoke;
+    border: none;
 }
 
 .value-btn {
@@ -69,14 +81,13 @@ body {
     height: 100px;
     font-size: 24px;
     margin-top: 20px;
+    border-radius: 50%;
+    background-color: #F1A629;
+    color: whitesmoke;
+    border: none;
 }
 
-.action-btn {
-    width: 120px;
-    height: 100px;
-    font-size: 24px;
-    margin-top: 20px;
-}
+
 
 .get-money {
     background-color: rgb(244, 60, 35);
@@ -107,9 +118,6 @@ body {
     flex-direction: column;
 }
 
-.action-btn {
-    border-radius: 20px;
-}
 
 .col-5 {
     width: 41%;
